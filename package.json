@@ -8,7 +8,9 @@
     "start": "concurrently \"nodemon src/server/server.js\" \"webpack -d --watch\"",
     "build": "webpack -p",
     "react-dev": "webpack -d --watch",
-    "server-dev": "nodemon src/server/server.js"
+    "server-dev": "nodemon src/server/server.js",
+    "postinstall": "webpack",
+    "heroku-postbuild": "webpack -p"
   },
   "author": "",
   "license": "ISC",
