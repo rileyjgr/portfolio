@@ -20,15 +20,12 @@ module.exports = {
     },
     schemas: {
         contact: Joi.object().keys({
-            name: Joi.string()
-                .regex(/^[\/A-Za-z ]$/)
-                .required(),
+            name: Joi.string().required(),
             email: Joi.string()
                 .email({ minDomainAtoms: 2 })
                 .required(),
-            message: Joi.string()
-                .regex(/^[a-zA-Z0-9,.?! ]$/)
-                .required()
+            subject: Joi.string().required(),
+            message: Joi.string().required()
         })
     }
 };
