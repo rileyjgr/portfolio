@@ -6,9 +6,8 @@ class ContactPage extends Component{
 
                 <div className="container">
                     <div className="section-title text-center">
-                        <h2>Contact</h2>
-                        <p className="separator">Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                            accusantium doloremque</p>
+                        <h2>Contact Me</h2>
+                        {/*<p className="separator">put some stuff in here</p>*/}
                     </div>
                 </div>
 
@@ -18,11 +17,8 @@ class ContactPage extends Component{
                         <div className="col-lg-3 col-md-4">
 
                             <div className="social-links">
-                                <a href="#" className="twitter"><i className="fa fa-twitter"></i></a>
-                                <a href="#" className="facebook"><i className="fa fa-facebook"></i></a>
-                                <a href="#" className="instagram"><i className="fa fa-instagram"></i></a>
-                                <a href="#" className="google-plus"><i className="fa fa-google-plus"></i></a>
-                                <a href="#" className="linkedin"><i className="fa fa-linkedin"></i></a>
+                                <a href="https://www.linkedin.com/in/riley-griffin-a6a4b3b1/" className="linkedin"><i className="fa fa-linkedin"/></a>
+                                <a href="https://github.com/rileyjgr" className="github"><i className="fa fa-github"/></a>
                             </div>
 
                         </div>
@@ -52,7 +48,7 @@ class ContactPage extends Component{
                                     </div>
                                     <div className="form-group">
                                         <textarea className="form-control" name="message" rows="5" data-rule="required"
-                                                  data-msg="Please write something for us"
+                                                  data-msg="Please write a brief description of why you are contacting me."
                                                   placeholder="Message"/>
                                         <div className="validation"/>
                                     </div>

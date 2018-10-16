@@ -13,10 +13,8 @@ class AboutPage extends Component{
                         <div className="col-md-7 col-lg-5">
                             <div className="about-content">
 
-                                <h2><span>eStartup</span>UI Design Mobile </h2>
-                                <p>Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                                    magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                                    nisi ut aliquip ex ea commodo consequat
+                                <h2><span>MERN Stack</span>MongoDb, Express, React, Node.js</h2>
+                                <p>Seeking job opportunties in Full-Stack Web Development.
                                 </p>
 
                                 <ul className="list-unstyled">
