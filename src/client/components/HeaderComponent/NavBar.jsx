@@ -8,6 +8,7 @@ class NavBar extends Component {
                     <ul className="nav-menu">
                         <li className="menu-active"><Link to="/">Home</Link></li>
                         <li><Link to="/about">About Me</Link></li>
+                        <li><Link to="/projects">Projects</Link></li>
                         <li><Link to="/contact">Contact</Link></li>
                     </ul>
                 </nav>
