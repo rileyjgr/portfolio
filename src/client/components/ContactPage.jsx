@@ -27,7 +27,7 @@ class ContactPage extends Component{
                             <div className="form">
                                 <div id="sendmessage">Your message has been sent. Thank you!</div>
                                 <div id="errormessage"/>
-                                <form action="" method="post" role="form" className="contactForm">
+                                <form role="form" className="contactForm">
                                     <div className="form-group">
                                         <input type="text" name="name" className="form-control" id="name"
                                                placeholder="Your Name" data-rule="minlen:4"
@@ -49,11 +49,11 @@ class ContactPage extends Component{
                                     <div className="form-group">
                                         <textarea className="form-control" name="message" rows="5" data-rule="required"
                                                   data-msg="Please write a brief description of why you are contacting me."
-                                                  placeholder="Message"/>
+                                                  placeholder="Message" id="message"/>
                                         <div className="validation"/>
                                     </div>
                                     <div className="text-center">
-                                        <button type="submit" id="submit">Send Message</button>
+                                        <button id="submit" onClick="sendData()">Send Message</button>
                                     </div>
                                 </form>
                             </div>
