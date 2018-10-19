@@ -4,7 +4,8 @@ import HomePage from './HomePage';
 import ContactPage from './ContactPage';
 import NavBar from './HeaderComponent/NavBar';
 import AboutPage from "./AboutPage";
-import Projects from "./Projects";
+import ProjectsPage from "./ProjectsPage";
+
 class App extends Component {
     render() {
         return (
@@ -13,7 +14,7 @@ class App extends Component {
                     <NavBar />
                     <Route name="home" exact path="/" component={HomePage} />
                     <Route name="about" exact path="/about" component={AboutPage}/>
-                    <Route name="projects" exact path="/projects" component={Projects}/>
+                    <Route name="projects" exact path="/projects" component={ProjectsPage}/>
                     <Route name="contact" exact path="/contact" component={ContactPage}/>
                 </div>
             </Router>

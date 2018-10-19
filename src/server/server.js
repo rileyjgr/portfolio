@@ -18,8 +18,7 @@ Schema = mongoose.Schema;
 db.on("error", console.error.bind(console, "connection error:"));
 
 db.once('open', function(){
-    routes.react(app);
-    routes.contact(app);
+    routes.app(app);
     app.listen(PORT);
 });
 

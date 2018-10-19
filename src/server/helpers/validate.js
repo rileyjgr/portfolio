@@ -26,6 +26,10 @@ module.exports = {
                 .required(),
             subject: Joi.string().required(),
             message: Joi.string().required()
+        }),
+        project: Joi.object().keys({
+            name:Joi.string().required(),
+            title: Joi.string().required()
         })
     }
 };
