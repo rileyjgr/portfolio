@@ -1,13 +1,30 @@
 import React, {Component} from 'react';
-import Link from "react-router-dom/es/Link";
-import Projects from "./Projects";
 class ProjectsPage extends Component {
     constructor(){
         super();
-
+        this.state = {
+            projects: [
+            {
+                'name':'chime',
+                'url':'https://chime-bot.herokuapp.com',
+                'desc':'Company Assistant'
+            },
+            {
+                'name': 'Animator',
+                'url':'http://animat.herokuapp.com',
+                'desc':'Text to speech Social Media'
+            },
+            {
+                'name':'Asteriod Impact Api',
+                'url':'https://teasteroidm-api.herokuapp.com',
+                'desc':'Asteriod Impact data using JPLS api.'
+            }
+            ]
+        }
     }
 
     render() {
+        console.log(this.state);    
         return (
             <div>
                 <section id="features" className="padd-section text-center wow fadeInUp"
@@ -18,10 +35,24 @@ class ProjectsPage extends Component {
                             <h2>My Projects / Things I have worked on.</h2>
                         </div>
                     </div>
-
-                    <div className="container">
-                    <Projects/>
-                </div>
+                    <div className="projects">
+                    <div id="chime">
+                        <h1>{this.state.projects[0].name}</h1>
+                        <h3>{this.state.projects[0].desc}</h3>
+                        <a href={this.state.projects[0].url}>Website</a>
+                    </div>
+                    <div id="Animator">
+                        <h1>{this.state.projects[1].name}</h1>
+                        <h3>{this.state.projects[1].desc}</h3>
+                        <a href={this.state.projects[1].url}>Website</a>
+                    </div>
+                    <div id="ImpactApi">
+                        <h1>{this.state.projects[2].name}</h1>
+                        <h3>{this.state.projects[2].desc}</h3>
+                        <a href={this.state.projects[2].url}>Website</a>
+                    </div>
+                    
+                    </div>
                 </section>
             </div>
         )

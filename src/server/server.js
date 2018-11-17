@@ -6,6 +6,7 @@ const routes = require('./routes/routes');
 require('dotenv').config();
 
 const mongoConnect = process.env.MONGODB_URI || "mongodb://localhost:27017/riley";
+
 mongoose.connect(mongoConnect).then(function(error) {
     if (error) {
         console.log(error);

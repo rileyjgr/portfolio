@@ -22,7 +22,7 @@ module.exports = {
     },
     getProject: async(req, res, next) => {
         await Project.find({}, function(err, projects){
-            let projectMap = {};
+            let projectMap = [];
             projects.forEach(function(project){
                 projectMap[project.name + project.title] = project;
             });

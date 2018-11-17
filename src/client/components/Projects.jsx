@@ -1,33 +1,26 @@
 import React, {Component} from 'react';
-import axios from 'axios';
 class Projects extends Component {
     constructor(){
         super();
         this.state = {
-            projects: []
+            projects: [
+                {
+                    'name':'chime',
+                    'url':'https://chime-bot.herokuapp.com',
+                    'desc':'Company Assistant'
+                },
+                {
+                    'name': 'Animator',
+                    'url':'http://animat.herokuapp.com',
+                    'desc':'Text to speech Social Media'
+                },
+                {
+                    'name':'Asteriod Impact Api',
+                    'url':'https://teasteroidm-api.herokuapp.com',
+                    'desc':'Asteriod Impact data using JPLS api.'
+                }
+            ]
         }
-
-    }
-
-    componentDidMount() {
-        axios.get('/api/projects')
-            .then(results => {
-                console.log(results);
-                console.log(results.data);
-                let projects = Object.keys(results.data).forEach(project =>{
-                    console.log('data here ; ', project);
-                    return(
-                            <div className="feature-block">
-                                <h4 text={project}/>
-                                <p text={project}/>
-                            </div>
-                    )
-                });
-                console.log(projects);
-                this.setState({projects: projects});
-                console.log("state", this.state.projects);
-
-            })
     }
     render() {
         console.log('my state ', this.state);
