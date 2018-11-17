@@ -6,7 +6,7 @@ class HomePage extends Component {
                     <div className="hero-container">
                         <h1>Riley Griffin</h1>
                         <h2>Full-Stack Developer, MERN</h2>
-                        <img src="imgs/me.png" />
+                        <img src="/imgs/me.PNG" />
                     </div>
             </div>
         )

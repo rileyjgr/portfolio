@@ -43,19 +43,19 @@ class ProjectsPage extends Component {
                         <h1>{this.state.projects[0].name}</h1>
                         <h3>{this.state.projects[0].desc}</h3>
                         <a href={this.state.projects[0].url}>Website</a>
-                        <a href={this.state.projects[0].github}>Github</a>
+                        <a href={this.state.projects[0].github}> Github</a>
                     </div>
                     <div id="Animator">
                         <h1>{this.state.projects[1].name}</h1>
                         <h3>{this.state.projects[1].desc}</h3>
                         <a href={this.state.projects[1].url}>Website</a>
-                        <a href={this.state.projects[1].github}>Github</a>
+                        <a href={this.state.projects[1].github}> Github</a>
                     </div>
                     <div id="ImpactApi">
                         <h1>{this.state.projects[2].name}</h1>
                         <h3>{this.state.projects[2].desc}</h3>
                         <a href={this.state.projects[2].url}>Website</a>
-                        <a href={this.state.projects[2].github}>Github</a>
+                        <a href={this.state.projects[2].github}> Github</a>
                     </div>
                     
                     </div>

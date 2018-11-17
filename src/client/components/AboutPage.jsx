@@ -13,19 +13,9 @@ class AboutPage extends Component{
 
                         <div className="col-md-7 col-lg-5">
                             <div className="about-content">
-
                                 <h2><span>MERN Stack</span>MongoDb, Express, React, Node.js</h2>
                                 <p>Seeking job opportunties in Full-Stack Web Development.
                                 </p>
-
-                                <ul className="list-unstyled">
-                                    <li><i className="fa fa-angle-right"/>Creative Design</li>
-                                    <li><i className="fa fa-angle-right"/>Retina Ready</li>
-                                    <li><i className="fa fa-angle-right"/>Easy to Use</li>
-                                    <li><i className="fa fa-angle-right"/>Unlimited Features</li>
-                                    <li><i className="fa fa-angle-right"/>Unlimited Features</li>
-                                </ul>
-
                             </div>
                         </div>
 
