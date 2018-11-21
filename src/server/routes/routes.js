@@ -8,7 +8,7 @@ module.exports = {
         app.post('/contact', controllers.contact);
 
         app.get('/api/projects', controllers.getProject);
-        
+        app.post('api/projects', controllers.getGitHubData);
         app.use(express.static(`${__dirname}/../../dist`));
         app.use(express.static(`${__dirname}/../../dist/js/contact.js`));
         app.get('*', (req, res) => {

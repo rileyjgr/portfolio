@@ -17,46 +17,15 @@ class ContactPage extends Component{
                         <div className="col-lg-3 col-md-4">
 
                             <div className="social-links">
-                                <a href="https://www.linkedin.com/in/riley-griffin-a6a4b3b1/" className="linkedin"><i className="fa fa-linkedin"/></a>
-                                <a href="https://github.com/rileyjgr" className="github"><i className="fa fa-github"/></a>
+                                <a href="https://www.linkedin.com/in/riley-griffin-a6a4b3b1/" className="linkedin">Linkedin</a>
+                                <a href="https://github.com/rileyjgr" className="github">Github</a>
                             </div>
 
                         </div>
 
                         <div className="col-lg-5 col-md-8">
-                            <div className="form">
-                                <div id="sendmessage">Your message has been sent. Thank you!</div>
-                                <div id="errormessage"/>
-                                <form role="form" className="contactForm">
-                                    <div className="form-group">
-                                        <input type="text" name="name" className="form-control" id="name"
-                                               placeholder="Your Name" data-rule="minlen:4"
-                                               data-msg="Please enter at least 4 chars"/>
-                                        <div className="validation"/>
-                                    </div>
-                                    <div className="form-group">
-                                        <input type="email" className="form-control" name="email" id="email"
-                                               placeholder="Your Email" data-rule="email"
-                                               data-msg="Please enter a valid email"/>
-                                        <div className="validation"/>
-                                    </div>
-                                    <div className="form-group">
-                                        <input type="text" className="form-control" name="subject" id="subject"
-                                               placeholder="Subject" data-rule="minlen:4"
-                                               data-msg="Please enter at least 8 chars of subject"/>
-                                        <div className="validation"/>
-                                    </div>
-                                    <div className="form-group">
-                                        <textarea className="form-control" name="message" rows="5" data-rule="required"
-                                                  data-msg="Please write a brief description of why you are contacting me."
-                                                  placeholder="Message" id="message"/>
-                                        <div className="validation"/>
-                                    </div>
-                                    <div className="text-center">
-                                        <button id="submit" onClick="sendData()">Send Message</button>
-                                    </div>
-                                </form>
-                            </div>
+                            <p>Email: <a href="#">rigrffin241@gmail.com</a></p>
+                            <p>Mobile: <a href="#">(908)-578-7632</a></p>
                         </div>
                     </div>
                 </div>

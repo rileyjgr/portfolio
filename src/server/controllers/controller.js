@@ -14,43 +14,68 @@ module.exports = {
         res.json({message: "sent"});
         next();
     },
-    getProject: async(req, res, next) => {
+    getProject: async(req, res, next) => {   
         const access_token = process.env.GITHUB_ACCESS_TOKEN;
-            axios.get('https://api.github.com/users/rileyjgr/repos')
-            .then((response)=>{
-                const projectData = response.data;
-                let {name, desc, url} ='';
-
-                const project = {name, desc, url};
-                for(let key in projectData){
-                    name = projectData[key].name;
-                    desc = projectData[key].description;
-                    url = projectData[key].url;
-                    // determing if it exists or not is not working yet. Would be better to just do this before the call. 
-                    // const foundProject = Project.findOne({name});
-                    // if (foundProject) {
-                    //     console.log('Project already Exists' + foundProject);
-                    // } else {
-                    //     const newProject = new Project({name, desc, url});
-                    //     newProject.save();
-                    // }
-                    const newProject = new Project({name, desc, url});
-                    newProject.save();
-                }
-            }).catch((error)=>{
-                console.log(error);
-            });
+        axios.get('https://api.github.com/users/rileyjgr/repos')
+        .then((response)=>{
+            const projectData = response.data;
+            let {name, desc, url} ='';
+            const project = {name, desc, url};
+            for(let key in projectData){
+                name = projectData[key].name;
+                desc = projectData[key].description;
+                url = projectData[key].html_url;
+                // determing if it exists or not is not working yet. Would be better to just do this before the call. 
+                // const foundProject = Project.findOne({name});
+                // if (foundProject) {
+                //     console.log('Project already Exists' + foundProject);
+                // } else {
+                //     const newProject = new Project({name, desc, url});
+                //     newProject.save();
+                // }
+                const newProject = new Project({name, desc, url});
+                newProject.save();
+            }
+        }).catch((error)=>{
+            console.log(error);
+        });
         
-
         await Project.find({}, (err, projects)=>{
             console.log(projects);
             let api = {};
             projects.forEach((project)=>{
                 api[project.name] = project;
             });
-           res.send(api);
+           res.json(api);
         });
         next();
 
+    },
+    getGitHubData: async(req, res, next)=>{
+        const access_token = process.env.GITHUB_ACCESS_TOKEN;
+        axios.get('https://api.github.com/users/rileyjgr/repos')
+        .then((response)=>{
+            const projectData = response.data;
+            let {name, desc, url} ='';
+            const project = {name, desc, url};
+            for(let key in projectData){
+                name = projectData[key].name;
+                desc = projectData[key].description;
+                url = projectData[key].html_url;
+                // determing if it exists or not is not working yet. Would be better to just do this before the call. 
+                // const foundProject = Project.findOne({name});
+                // if (foundProject) {
+                //     console.log('Project already Exists' + foundProject);
+                // } else {
+                //     const newProject = new Project({name, desc, url});
+                //     newProject.save();
+                // }
+                const newProject = new Project({name, desc, url});
+                newProject.save();
+            }
+        }).catch((error)=>{
+            console.log(error);
+        });
+        next();
     }
 };
