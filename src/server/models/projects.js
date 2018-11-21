@@ -3,8 +3,8 @@ const Schema = mongoose.Schema;
 
 const projectSchema = new Schema({
     name: String,
-    title: String,
-    repo_url: String
+    desc: String,
+    url: String
 });
 
 const Project = mongoose.model('project', projectSchema);

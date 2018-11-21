@@ -26,19 +26,22 @@ module.exports = {
                     name = projectData[key].name;
                     desc = projectData[key].description;
                     url = projectData[key].url;
-                    const foundProject = Project.findOne({name});
-                    if(foundProject){
-                    } else {
-                        const newProject = new Project({name, desc, url});
-                        const generateNewProject = async(newProject)=> {
-                            await newProject.save();
-                        }
-                    }
+                    // determing if it exists or not is not working yet. Would be better to just do this before the call. 
+                    // const foundProject = Project.findOne({name});
+                    // if (foundProject) {
+                    //     console.log('Project already Exists' + foundProject);
+                    // } else {
+                    //     const newProject = new Project({name, desc, url});
+                    //     newProject.save();
+                    // }
+                    const newProject = new Project({name, desc, url});
+                    newProject.save();
                 }
             }).catch((error)=>{
                 console.log(error);
             });
         
+
         await Project.find({}, (err, projects)=>{
             console.log(projects);
             let api = {};
@@ -48,5 +51,6 @@ module.exports = {
            res.send(api);
         });
         next();
+
     }
 };
