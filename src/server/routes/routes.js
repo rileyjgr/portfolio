@@ -7,7 +7,7 @@ module.exports = {
         app.use(bodyParser.json());
         app.post('/contact', controllers.contact);
 
-        app.get('/api/projects', controllers.getProject(app));
+        app.get('/api/projects', controllers.getProject);
         
         app.use(express.static(`${__dirname}/../../dist`));
         app.use(express.static(`${__dirname}/../../dist/js/contact.js`));

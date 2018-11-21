@@ -1,7 +1,7 @@
 const Contact = require('../models/contact');
 const Project = require('../models/projects');
 const axios = require('axios');
-const githubApiFilter = require('./githubApiFilter')
+const JSON = require('circular-json');
 require('dotenv').config();
 
 module.exports = {
@@ -14,9 +14,9 @@ module.exports = {
         res.json({message: "sent"});
         next();
     },
-    getProject: async(app, req, res, next) => {
+    getProject: async(req, res, next) => {
         const access_token = process.env.GITHUB_ACCESS_TOKEN;
-            axios.get('https://api.github.com/users/rileyjgr/repos?access_token='+ access_token)
+            axios.get('https://api.github.com/users/rileyjgr/repos')
             .then((response)=>{
                 const projectData = response.data;
                 let {name, desc, url} ='';
@@ -27,12 +27,10 @@ module.exports = {
                     desc = projectData[key].description;
                     url = projectData[key].url;
                     const foundProject = Project.findOne({name});
-                    console.log({name, desc, url});
                     if(foundProject){
                     } else {
                         const newProject = new Project({name, desc, url});
                         const generateNewProject = async(newProject)=> {
-                            console.log(newProject)
                             await newProject.save();
                         }
                     }
@@ -41,8 +39,14 @@ module.exports = {
                 console.log(error);
             });
         
-        const projects = Project.findOne({});
-        console.log(projects);
-        await res.json(projects);
+        await Project.find({}, (err, projects)=>{
+            console.log(projects);
+            let api = {};
+            projects.forEach((project)=>{
+                api[project.name] = project;
+            });
+           res.send(api);
+        });
+        next();
     }
 };
