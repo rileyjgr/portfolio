@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 const routes = require('./routes/routes');
 require('dotenv').config();
 
-const mongoConnect = process.env.MONGODB_URI || "mongodb://localhost:27017/riley";
+const mongoConnect = process.env.MONGODB_URI || "mongodb://localhost:27017/rileyReactSite";
 
 mongoose.connect(mongoConnect).then(function(error) {
     if (error) {

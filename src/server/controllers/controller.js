@@ -1,5 +1,8 @@
 const Contact = require('../models/contact');
 const Project = require('../models/projects');
+const axios = require('axios');
+const githubApiFilter = require('./githubApiFilter')
+require('dotenv').config();
 
 module.exports = {
     contact: async(req, res, next) =>{
@@ -7,27 +10,39 @@ module.exports = {
 
         const newMessage = new Contact({name, email, subject, message});
         await newMessage.save();
-
         console.log(newMessage);
         res.json({message: "sent"});
         next();
     },
-    postProject: async(req, res, next) => {
-        const {name, title} = req.value.body;
-        const newProject = new Project({name, title});
-        await newProject.save();
-        console.log(newProject);
-        res.json({project: 'made'});
-        next();
-    },
-    getProject: async(req, res, next) => {
-        await Project.find({}, function(err, projects){
-            let projectMap = [];
-            projects.forEach(function(project){
-                projectMap[project.name + project.title] = project;
+    getProject: async(app, req, res, next) => {
+        const access_token = process.env.GITHUB_ACCESS_TOKEN;
+            axios.get('https://api.github.com/users/rileyjgr/repos?access_token='+ access_token)
+            .then((response)=>{
+                const projectData = response.data;
+                let {name, desc, url} ='';
+
+                const project = {name, desc, url};
+                for(let key in projectData){
+                    name = projectData[key].name;
+                    desc = projectData[key].description;
+                    url = projectData[key].url;
+                    const foundProject = Project.findOne({name});
+                    console.log({name, desc, url});
+                    if(foundProject){
+                    } else {
+                        const newProject = new Project({name, desc, url});
+                        const generateNewProject = async(newProject)=> {
+                            console.log(newProject)
+                            await newProject.save();
+                        }
+                    }
+                }
+            }).catch((error)=>{
+                console.log(error);
             });
-            res.json(projectMap);
-        });
-        next();
+        
+        const projects = Project.findOne({});
+        console.log(projects);
+        await res.json(projects);
     }
 };
