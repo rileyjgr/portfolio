@@ -28,6 +28,7 @@ class ProjectsPage extends Component {
       }
     render() {
         console.log(this.state.projects);  
+        const projects = this.state.projects;
         return (
             <div>
                 <section id="features" className="padd-section text-center wow fadeInUp"
@@ -38,10 +39,10 @@ class ProjectsPage extends Component {
                             <h2>My Projects / Things I have worked on. (Please note this page is still underdevelopment)</h2>
                         </div>
                     </div>
+                    <div id="projects">
+                        {this.state.projects.map(project => <div className="col-md-1 col-lg-12"><a href={project.url} class="portfolio-info"><h5>{project.name}</h5><p>{project.desc}</p></a></div>)}
+                    </div>
                 </section>
-                <div id="projects">
-                    {this.state.projects.map(project => <div><p>-----</p><li>{project.name}</li><li>{project.desc}</li><a href={project.url}>View on Github</a><p>-----</p></div>)}
-                </div>
             </div>
         )
     }
