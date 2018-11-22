@@ -8,6 +8,9 @@ class HomePage extends Component {
                         <h2>Full-Stack Developer, MERN</h2>
                         <img src="/imgs/me.PNG" />
                     </div>
+                    <div className="links">
+                    
+                    </div>
             </div>
         )
     }

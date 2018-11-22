@@ -36,11 +36,11 @@ class ProjectsPage extends Component {
 
                     <div className="container">
                         <div className="section-title text-center">
-                            <h2>My Projects / Things I have worked on. (Please note this page is still underdevelopment)</h2>
+                            <h2>My Projects and Portfolio</h2>
                         </div>
                     </div>
                     <div id="projects">
-                        {this.state.projects.map(project => <div className="col-md-1 col-lg-12"><a href={project.url} class="portfolio-info"><h5>{project.name}</h5><p>{project.desc}</p></a></div>)}
+                        {this.state.projects.map(project => <div className="card"><div class="card-body"><h5 class="card-title">{project.name}</h5><p class="card-text">{project.desc}</p><a href={project.url} class="btn btn-primary">View on Github</a></div></div>)}
                     </div>
                 </section>
             </div>

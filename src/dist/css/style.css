@@ -360,12 +360,6 @@ span {
     margin: 0 0 0 0;
 }
 
-@media (max-width: 1024px) {
-    #nav-menu-container {
-        display: none;
-    }
-}
-
 /* Nav Meu Styling */
 .nav-menu a {
     padding: 8px 8px;
