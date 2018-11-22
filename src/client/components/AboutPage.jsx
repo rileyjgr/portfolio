@@ -29,8 +29,8 @@ class AboutPage extends Component{
                                     </ul>
                                     <ul><b>Work Experience:</b>
                                         <li>Molod Spitz & DeSantis - IT Specialist and Billing Coordinator: May 2017 - May 2018</li>
-                                        <li>Turner Construction Company - Payroll Assistant: December 2017 - May 2017</li>
-                                        <li>Turner Construction Company - Accounting Intern: June 2016 - December 2017</li>
+                                        <li>Turner Construction Company - Payroll Assistant: December 2016 - May 2017</li>
+                                        <li>Turner Construction Company - Accounting Intern: June 2016 - December 2016</li>
                                     </ul>
                                     <ul><b>Favorite Technologies:</b>
                                         <li>DialogFlow</li>
