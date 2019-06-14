@@ -32,7 +32,7 @@ class ProjectsPage extends Component {
         return (
             <div>
                 <section id="features" className="padd-section text-center wow fadeInUp"
-                         style={{visibility: 'visible', animationName: 'fadeInUp'}}>
+                        style={{visibility: 'visible', animationName: 'fadeInUp'}}>
 
                     <div className="container">
                         <div className="section-title text-center">

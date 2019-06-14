@@ -9,7 +9,7 @@ class HomePage extends Component {
                         <img src="/imgs/me.PNG" />
                     </div>
                     <div className="links">
-                    
+                        
                     </div>
             </div>
         )
